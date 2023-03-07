@@ -21,28 +21,33 @@ public class MemoController {
         return new ModelAndView("index");
     }
 
-    @PostMapping("/api/memos") // 글 생성
+    // 글 생성
+    @PostMapping("/api/memos")
     public MemoResponseDto createMemo(@RequestBody MemoRequestDto requestDto) { // dto를 문자열로 받아오겠다 ?
         return memoService.createMemo(requestDto);
     }
 
-    @GetMapping("/api/memos") // 전체 글 조회
+    // 전체 글 조회
+    @GetMapping("/api/memos")
     public List<MemoResponseDto> getMemos() {
         return memoService.getMemos();
     }
 
-    @GetMapping("/api/memos/{id}") // 선택 글 조회
+    // 선택 글 조회
+    @GetMapping("/api/memos/{id}")
     public MemoResponseDto getMemo(@PathVariable Long id/*url에서 입력한id*/) {
         return memoService.getMemo(id/*url에서 입력한id*/); // service의 getmemo메서드에 id값을 가져감
         // 마지막 단계 - service에서 리턴한 memo가 바로 memoService.getMemo(id)로 되어 출력
     }
 
-    @PutMapping("/api/memos/{id}") // 글 수정
+    // 글 수정
+    @PutMapping("/api/memos/{id}")
     public MemoResponseDto updateMemo(@PathVariable Long id, @RequestBody MemoRequestDto requestDto) {// body에 dto를 json형식으로 받음
         return memoService.updateMemo(id, requestDto);
     }
 
-    @DeleteMapping("/api/memos/{id}") // 글 삭제
+    // 글 삭제
+    @DeleteMapping("/api/memos/{id}")
     public String deleteMemo(@PathVariable Long id) {
         return memoService.deleteMemo(id);
     }

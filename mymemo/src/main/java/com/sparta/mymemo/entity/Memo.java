@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -27,6 +29,8 @@ public class Memo extends TimeStamped{
     @Column(nullable = false)
     private String password;
 
+    @ManyToMany
+    private List<Memo> memoList = new ArrayList<>();
 
     public Memo(MemoRequestDto requestDto) {
         this.author = requestDto.getAuthor();
