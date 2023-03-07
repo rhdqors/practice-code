@@ -16,10 +16,10 @@ public class Memo extends TimeStamped{
     private Long id;
 
     @Column(nullable = false) // ddl 생성시 not null 설정. - 데이터 생성시 null 못들어오게?
-    private String userName;
+    private String author;
 
     @Column(nullable = false)
-    private String contents;
+    private String content;
 
     @Column(nullable = false)
     private String title;
@@ -29,15 +29,15 @@ public class Memo extends TimeStamped{
 
 
     public Memo(MemoRequestDto requestDto) {
-        this.userName = requestDto.getUserName();
-        this.contents = requestDto.getContents();
+        this.author = requestDto.getAuthor();
+        this.content = requestDto.getContent();
         this.title = requestDto.getTitle();
         this.password = requestDto.getPassword();
     }
 
     public void updateMemo(MemoRequestDto requestDto) {
-        this.userName = requestDto.getUserName();
-        this.contents = requestDto.getContents();
+//        this.userName = requestDto.getUserName();
+        this.content = requestDto.getContent();
         this.title = requestDto.getTitle();
     }
 
