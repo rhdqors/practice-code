@@ -31,7 +31,6 @@ public class Post extends TimeStamped{
 //    private List<Post> postList = new ArrayList<>();
 
     public Post(PostRequestDto requestDto, User user) {
-//        this.author = requestDto.getAuthor();
         this.content = requestDto.getContent();
         this.title = requestDto.getTitle();
         this.username = user.getUsername();

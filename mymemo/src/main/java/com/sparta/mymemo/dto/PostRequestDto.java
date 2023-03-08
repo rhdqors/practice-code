@@ -13,4 +13,5 @@ public class PostRequestDto { // 클라에서 어떤값을 받을지
 
     private String title;
     private String content;
+//    private String username;
 }

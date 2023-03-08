@@ -8,11 +8,10 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
-public class PostResponseDto {
+public class PostResponseDto { // 클라로 어떤값을 내보낼지
 
     private Long id;
     private String title;
-//    private String author;
     private String username;
     private String content;
     private LocalDateTime createdAt;
@@ -21,7 +20,6 @@ public class PostResponseDto {
     public PostResponseDto(Post post) {
         this.id = post.getId();
         this.title = post.getTitle();
-//        this.author = post.getAuthor();
         this.username = post.getUsername();
         this.content = post.getContent();
         this.createdAt = post.getCreatedAt();
