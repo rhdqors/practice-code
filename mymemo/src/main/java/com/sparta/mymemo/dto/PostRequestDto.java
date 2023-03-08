@@ -9,12 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PostRequestDto {
+public class PostRequestDto { // 클라에서 어떤값을 받을지
 
     private String title;
-
-//    private String author;
-//    private String password;
-    private String username;
     private String content;
 }
