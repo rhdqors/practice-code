@@ -1,5 +1,6 @@
 package com.sparta.mymemo.entity;
 
+import com.sparta.mymemo.dto.SignupRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,10 +28,10 @@ public class User {
 //    @OneToMany
 //    List<Post> posts = new ArrayList<>();
 
-    public User(String username, String password, UserRoleEnum role) {
+    public User(SignupRequestDto signupRequestDto, UserRoleEnum role) {
         this.role = role;
-        this.username = username;
-        this.password = password;
+        this.username = signupRequestDto.getUsername();
+        this.password = signupRequestDto.getPassword();
     }
 
 }
